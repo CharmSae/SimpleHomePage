@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html>
+<?php
+function make_header(){
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-	<title>게시판 - 글쓰기</title>
-
+		echo '<meta http-equiv="Content-Type" Content="text/html; charset=utf-8" />
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/style/main.css">
-</head>
-<body>
-	<body bgcolor="EEEEEE">
-	<header>
+		<link rel="stylesheet" href="http://subsides.hostei.com//css/style/main.css">
+
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script>
+		     $(function(){
+		       	$(".dropdown-toggle").on("click", function() {
+		       			var id = $(this).attr("data-id");
+		    			$("#"+id).slideToggle();
+		  			});
+		    });
+		</script>';
+
+echo '<header>
 			 <nav class="navbar navbar-default navbar-fixed-top">
   				<div class="container-fluid">
     			<!-- Brand and toggle get grouped for better mobile display -->
@@ -22,16 +27,16 @@
         			<span class="icon-bar"></span>
         			<span class="icon-bar"></span>
       			</button>
-      			<a class="navbar-brand">ReseachAll</a>
+      			<a href="http://subsides.hostei.com/index.php" class="navbar-brand">ResearchAll</a>
    				 </div>
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav navbar-right">
-				      	<li><a href="http://subsides.hostei.com/index.php">Home <span class="sr-only">(current)</span></a></li>
+				      	<li class="active"><a href="http://subsides.hostei.com/index.php">Home <span class="sr-only">(current)</span></a></li>
 				      	<li class="dropdown">
 				          <a href="" data-id="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">게시판<span class="caret"></span></a>
 				          <ul id="dropdown" class="dropdown-menu" role="menu">
-				            <li class="active"><a href="http://subsides.hostei.com/get_basic_board.php">자유게시판</a></li>
+				            <li><a href="http://subsides.hostei.com/basic_board/get_basic_board.php">자유게시판	</a></li>
 				            <li class="divider"></li>
 				            <li><a href="http://subsides.hostei.com/get_poll_board.php">투표게시판</a></li>
 				          </ul>
@@ -54,40 +59,13 @@
 				  </div><!-- /.container-fluid -->
 				</nav>
 		</header>
-		<br><br><br>
-		<center>
-			
-	<label><h2>글쓰기</h2></label>
-	<table>
-		<tr>
-			<td>
-	<form action = "http://subsides.hostei.com/basic_board_added.php" method = "post">
-		<hr>
-		<p>제목:
-			<input type="text" class="form-control" name="subject" size="98" value="" placeholder="제목을 입력해 주세요"/>
-		</p>
-		<p>내용:
-			<textarea class="form-control" name="content" cols="100" rows="15" value="" placeholder="내용을 쓰는 곳"></textarea>
-		</p>
-		<p>글쓴이:
-			<input type="text" class="form-control" name="writer" size="30" value="" placeholder="이름을 입력해 주세요"/>
-		</P>
-		<p>비밀번호:
-			<input type="password" class="form-control" name="password" size="30" value="" placeholder="비밀번호를 입력해 주세요"/>
-		</P>
-		<p>
-			<input type ="submit" class="form-control" name = "submit" value="작성" />
-		</p>
-	</form>
-			</td>
-		</tr>
-	</table>
 
-	<hr>
-	<div class="btn-group" role="group" aria-label="...">
-	 <button type="button" class="btn btn-default"><a href="http://subsides.hostei.com/get_basic_board.php">게시판목록</a></button>
-	</div>
-</center>
-<br>
-</body>
-</html>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js">
+
+		</script>
+
+		<body bgcolor="EEEEEE">';
+
+			}
+?>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>게시판 - 글쓰기</title>
+		<?php
+
+		include('../header/header.php');
+
+		make_header();
+
+		?>
+</head>
+<body>
+		<br><br><br>
+		<center>	
+	<label><h2>글쓰기</h2></label>
+	<table>
+		<tr>
+			<td>
+	<form action = "http://subsides.hostei.com/basic_board/basic_board_added.php" method = "post">
+		<hr>
+		<p>제목:
+			<input type="text" class="form-control" name="subject" size="98" value="" placeholder="제목을 입력해 주세요"/>
+		</p>
+		<p>내용:
+			<textarea class="form-control" name="content" cols="100" rows="15" value="" placeholder="내용을 쓰는 곳"></textarea>
+		</p>
+		<p>글쓴이:
+			<input type="text" class="form-control" name="writer" size="30" value="" placeholder="이름을 입력해 주세요"/>
+		</P>
+		<p>비밀번호:
+			<input type="password" class="form-control" name="password" size="30" value="" placeholder="비밀번호를 입력해 주세요"/>
+		</P>
+		<p>
+			<input type ="submit" class="form-control" name = "submit" value="작성" />
+		</p>
+	</form>
+			</td>
+		</tr>
+	</table>
+
+	<hr>
+	<div class="btn-group" role="group" aria-label="...">
+	 <button type="button" class="btn btn-default"><a href="http://subsides.hostei.com/basic_board/get_basic_board.php">게시판목록</a></button>
+	</div>
+</center>
+<br>
+</body>
+</html>

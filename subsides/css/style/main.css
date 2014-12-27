@@ -1,3 +1,9 @@
+body {background-color:#EEEEEE;}
+.subject {text-align: center;}
+.subject tr td {border-bottom: 1px solid #E5E5E5;}
+.subject tr td a {text-decoration: none; font-family: dotum;}
+.reply tr td {border-bottom: 1px solid #E5E5E5;}
+
 .navbar-default {
 	background-color: #F34677;
 	border-color: #ffffff;

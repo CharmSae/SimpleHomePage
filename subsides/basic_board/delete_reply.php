@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 	<title>게시판 - 내용</title>
-	<style type="text/css">
-	.subject {text-align: center;}
-	.gnb h2 {visibility: hidden; font-size: 0; height: 0;}
-	.gnb {padding: 0.3em; background-color: #111;}
-	.gnb ul li {display: inline; padding: 0 2em;}
-	.gnb ul li a {color: #fff; font-weight: bold; text-transform: uppercase; text-decoration: none;}
-	</style>
+		<?php
 
+		include('../header/header.php');
+
+		make_header();
+
+		?>
 </head>
 <body>
-	<body bgcolor="E5E5E5">
-	<br>
+	<br><br><br>
 	<center>
 	<h2>게시판 - 내용</h2>
-	<header>
-			<nav class="gnb">
-			<h2>주요메뉴</h2>
-			<ul>
-				<li><a href="http://subsides.hostei.com/index.php">Home</a></li>
-				<li><a href="http://subsides.hostei.com/get_basic_board.php">자유게시판</a></li>
-				<li><a href="">갤러리</a></li>
-				<li><a href="">쇼핑몰</a></li>
-				<li><a href="http://subsides.hostei.com/get_basic_board.php">토렌트</a></li>
-
-			</ul>
-			</nav>
-
-		</header>
 	<hr>
 
 	<?php
@@ -88,11 +71,11 @@
     
 
 	?>
-	<a href="http://subsides.hostei.com/get_board_content.php?id=<?=$_REQUEST['parents_id']?>">원래글로</a>
+	<a href="http://subsides.hostei.com/basic_board/get_board_content.php?id=<?=$_REQUEST['parents_id']?>">원래글로</a>
 
 	<hr>
-	<a href="http://subsides.hostei.com/get_basic_board.php">목록으로</a>
-	<a href="http://subsides.hostei.com/basic_board.html">글쓰러가기</a>
+	<a href="http://subsides.hostei.com/basic_board/get_basic_board.php">목록으로</a>
+	<a href="http://subsides.hostei.com/basic_board/basic_board.html">글쓰러가기</a>
 	</center>
 </body>
 </html>
