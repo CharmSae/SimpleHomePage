@@ -1,43 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-
     <title>양자택일 - 만들기</title>
-          <style>
-    .subject {text-align: center;}
-    .subject tr td {border-bottom: 1px solid #E5E5E5;}
-    .subject tr td a {text-decoration: none; font-family: dotum;}
-    .gnb h2 {visibility: hidden; font-size: 0; height: 0;}
-    .gnb {padding: 0.3em; background-color: #111;}
-    .gnb ul li {display: inline; padding: 0 2em;}
-    .gnb ul li a {color: #fff; font-weight: bold; text-transform: uppercase; text-decoration: none;}
-    </style>
+        <?php
+
+        include('../header/header.php');
+        include('../board_query/board_query.php');
+
+        make_header();
+
+        ?>
 </head>
 <body>
-    <body bgcolor="EEEEEE">
-
-        <br>
         <center>
-        <b><h2>양자택일 - 만들기</h2></b>
-        <header>
-            <nav class="gnb">
-            <h2>주요메뉴</h2>
-            <ul>
-                <li><a href="http://subsides.hostei.com/index.php">Home</a></li>
-                <li><a href="http://subsides.hostei.com/get_basic_board.php">자유게시판</a></li>
-                <li><a href="">갤러리</a></li>
-                <li><a href="">쇼핑몰</a></li>
-                <li><a href="">토렌트</a></li>
-
-            </ul>
-            </nav>
-
-        </header>
+        <label><h2>양자택일 - 만들기</h2></label>
 
 <?php
 
-	$uploaddir = 'poll/';
+	$uploaddir = '../image/poll/';
 	$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
 echo '<pre>';
@@ -67,8 +47,9 @@ foreach ($_FILES["pictures"]["error"] as $key => $error) {
 	$src1 = $_FILES['pictures']['name'][0];
 	$src2 = $_FILES['pictures']['name'][1];
 
-		echo '<img src="poll/'.$src1.'"/>';
-		echo '<img src="poll/'.$src2.'"/>';
+		echo '<img src="../image/poll/'.$src1.'"/>';
+		echo '<img src="../image/poll/'.$src2.'"/>';
+        echo '</br>';
 
 	//db에 입력
         
@@ -107,7 +88,7 @@ foreach ($_FILES["pictures"]["error"] as $key => $error) {
 
         if(empty($data_missing)){
 
-            require_once('./mysqli_connector.php');
+            require_once('../mysqli_connector.php');
 
             $query = "INSERT INTO poll_board (subject, content, writer, password, date, hits, src1, src2, vote1, vote2) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
@@ -151,7 +132,7 @@ foreach ($_FILES["pictures"]["error"] as $key => $error) {
 ?>
 
 <hr>
-<a href="http://subsides.hostei.com/get_poll_board.php">게시판목록</a>
+<a href=".//get_poll_board.php">게시판목록</a>
 </center>
 
 </body>

@@ -11,7 +11,6 @@
 		?>
 </head>
 <body>
-	<br><br><br>
 	<center>
 	<h2>게시판 - 내용</h2>
 
@@ -19,9 +18,9 @@
 
 	<?php
 
-	require_once('./mysqli_connector.php');
+	require_once('../mysqli_connector.php');
 
-	$response = @mysqli_query($dbc, "SELECT password FROM basic_board WHERE id =".$_REQUEST['id']."");
+	$response = @mysqli_query($dbc, "SELECT password FROM ".$_REQUEST['content_name']."_board WHERE id =".$_REQUEST['id']."");
 
 	if($response){
 
@@ -29,7 +28,7 @@
 		
 		if($row['password'] == $_REQUEST['password']){
 
-	$query = "DELETE FROM basic_board WHERE id = ?";
+	$query = "DELETE FROM ".$_REQUEST['content_name']."_board WHERE id = ?";
 
 	$stmt = mysqli_prepare($dbc, $query);
 
@@ -74,8 +73,8 @@
 	?>
 
 	<hr>
-	<a href="http://subsides.hostei.com/basic_board/get_basic_board.php">목록으로</a>
-	<a href="http://subsides.hostei.com/basic_board/basic_board.html">글쓰러가기</a>
+	<a href="http://subsides.hostei.com/basic_board/get_<?=$_REQUEST['content_name']?>_board.php">목록으로</a>
+	<a href="http://subsides.hostei.com/basic_board/add_<?=$_REQUEST['content_name']?>.html">글쓰러가기</a>
 	</center>
 </body>
 </html>

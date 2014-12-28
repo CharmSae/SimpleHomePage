@@ -17,6 +17,7 @@
         <br><br><br>
         <center>
         <label><h2>게시판 - 글쓰기</h2></label>
+        <br/>
 
 <?php
 
@@ -58,7 +59,7 @@
 
         if(empty($data_missing)){
 
-            require_once('./mysqli_connector.php');
+            require_once('../mysqli_connector.php');
 
             $query = "INSERT INTO basic_board (subject, content, writer, password, date, hits) VALUES(?,?,?,?,?,?)";
 

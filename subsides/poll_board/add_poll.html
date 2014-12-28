@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>양자택일 - 만들기</title>
+        <?php
+
+        include('../header/header.php');
+        include('../board_query/board_query.php');
+
+        make_header();
+
+        ?>
+</head>
+<body>
+		<center>
+
+	<label><h2>글쓰기</h2></label>
+	<table>
+		<tr>
+			<td>
+		<form enctype="multipart/form-data" action="./add_poll.php" method="POST">
+		<hr>
+
+		<p>제목:
+			<input type="text" class="form-control" name="subject" size="98" value="" placeholder="제목을 입력해 주세요"/>
+		</p>
+		<p>설명:
+			<textarea class="form-control" name="content" cols="100" rows="15" value="" placeholder="투표에대해 설명해 주세요"></textarea>
+		</p>
+		<p>글쓴이:
+			<input type="text" class="form-control" name="writer" size="30" value="" placeholder="이름을 입력해 주세요"/>
+		</P>
+		<p>비밀번호:
+			<input type="password" class="form-control" name="password" size="30" value="" placeholder="비밀번호를 입력해 주세요"/>
+		</P>
+
+    <!-- MAX_FILE_SIZE는 file 입력 필드보다 먼저 나와야 합니다 -->
+    <!-- input의 name은 $_FILES 배열의 name을 결정합니다 -->
+    <p>1번 이미지 : <input type="file" class="form-control" name="pictures[]"/></p>
+	<p>2번 이미지 : <input type="file" class="form-control" name="pictures[]"/></p>
+    <p><input type="submit" class="form-control" name ="submit" value="만들기" /></p>
+			</td>
+		</tr>
+	</form>
+	</table>
+
+	<hr>
+	<div class="btn-group" role="group" aria-label="...">
+	 <button type="button" class="btn btn-default"><a href="./get_poll_board.php">게시판목록</a></button>
+	</div>
+</center>
+<br>
+</body>
+</html>

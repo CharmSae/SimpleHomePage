@@ -38,7 +38,7 @@ echo '<header>
 				          <ul id="dropdown" class="dropdown-menu" role="menu">
 				            <li><a href="http://subsides.hostei.com/basic_board/get_basic_board.php">자유게시판	</a></li>
 				            <li class="divider"></li>
-				            <li><a href="http://subsides.hostei.com/get_poll_board.php">투표게시판</a></li>
+				            <li><a href="http://subsides.hostei.com/poll_board/get_poll_board.php">투표게시판</a></li>
 				          </ul>
 				      </li>
 				        
@@ -65,7 +65,10 @@ echo '<header>
 
 		</script>
 
-		<body bgcolor="EEEEEE">';
+		<body bgcolor="EEEEEE">
+
+		<br><br><br>
+		<center>';
 
 			}
 ?>

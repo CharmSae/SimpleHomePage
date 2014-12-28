@@ -2,21 +2,20 @@
 <html>
 <head>
 	<title>게시판 - 내용</title>
-		<?php
+        <?php
 
-		include('../header/header.php');
+        include('../header/header.php');
+        include('../board_query/board_query.php');
 
-		make_header();
+        make_header();
 
-		?>
+        ?>
 </head>
 <body>
-	<br><br><br>
 	<center>
 	<h2>게시판 - 내용</h2>
-	
 	<hr>
-		<form action="http://subsides.hostei.com/basic_board/delete_board_content.php" method = "post">
+		<form action="./delete_poll_content.php" method = "post">
 			<p>비밀번호를 입력하시면 삭제됩니다.</p>
 			<p>
 			<input type ="hidden" name = "id" value="<?=$_REQUEST['id']?>" />
@@ -29,9 +28,9 @@
 		</form>
 
 	<hr>
-	<a href="http://subsides.hostei.com/basic_board/get_basic_board.php">목록으로</a>
-	<a href="http://subsides.hostei.com/basic_board/get_board_content.php?id=<?=$_REQUEST['id']?>">게시물로</a>
-	<a href="http://subsides.hostei.com/basic_board/basic_board.html">글쓰러가기</a>
+	<a href="./get_poll_board.php">목록으로</a>
+	<a href="./get_poll_content.php?id=<?=$_REQUEST['id']?>">게시물로</a>
+	<a href="./add_poll.html">글쓰러가기</a>
 	</center>
 </body>
 </html>

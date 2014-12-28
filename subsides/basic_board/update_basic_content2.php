@@ -12,11 +12,9 @@
         ?>
 </head>
 <body>
-
-		<br><br><br>
 		<center>
 		<b><h2>게시판 - 수정</h2></b>
-<?php
+<?
 
 	if(isset($_POST['submit'])){
         
@@ -52,7 +50,7 @@
 
         if(empty($data_missing)){
 
-			require_once('./mysqli_connector.php');
+			require_once('../mysqli_connector.php');
 
 
 

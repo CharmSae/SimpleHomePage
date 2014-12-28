@@ -13,13 +13,11 @@
 		?>
 </head>
 <body>
-
-		<br><br><br>
 		<center>
 		<b><h2>게시판 - 수정</h2></b>
-<?php
+<?
 
-	require_once('./mysqli_connector.php');
+	require_once('../mysqli_connector.php');
 
 	$query = "SELECT subject, content, writer FROM basic_board WHERE id = ".$_REQUEST['id'];
 
