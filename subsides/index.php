@@ -25,12 +25,12 @@
 		<tr>
 			<td>
 		<ul class="nav nav-pills nav-stacked">
-  		<li role="presentation"><a href="http://subsides.hostei.com/index.php">Home</a></li>
-  		<li role="presentation"><a href="http://subsides.hostei.com/get_basic_board.php">자유게시판</a></li>
-  		<li role="presentation"><a href="http://subsides.hostei.com/get_poll_board.php">양자택일 - 게시판</a></li>
+  		<li role="presentation"><a href="./index.php">Home</a></li>
+  		<li role="presentation"><a href="./basic_board/get_basic_board.php">자유게시판</a></li>
+  		<li role="presentation"><a href="./poll_board/get_poll_board.php">양자택일 - 게시판</a></li>
   		<li role="presentation"><a href="">토군</a></li>
-  		<li role="presentation"><a href="http://subsides.hostei.com/ext.php">나나잇걸</a></li>
-  		<li role="presentation"><a href="http://subsides.hostei.com/examgall.php">수능갤러리</a></li>
+  		<li role="presentation"><a href="./ext.php">나나잇걸</a></li>
+  		<li role="presentation"><a href="./examgall.php">수능갤러리</a></li>
 		</ul>
 		</ul>
 			</td>
@@ -60,7 +60,7 @@ if($response){
 			$reply_response = @mysqli_query($dbc, $reply_query);
 			$num_reply = $reply_response->num_rows;
 
-			echo '<li><a href="http://subsides.hostei.com/get_board_content.php?id='.$row['id'].'">'.$row['subject'];
+			echo '<li><a href="./basic_board/get_basic_content.php?id='.$row['id'].'">'.$row['subject'];
 
 			if($num_reply != 0){
 				echo '['.$num_reply.']';
@@ -93,7 +93,7 @@ if($response){
   						<ul>
 <?
 
-$query = "SELECT subject, date FROM poll_board ORDER BY id DESC LIMIT ".$limit;
+$query = "SELECT id, subject, date FROM poll_board ORDER BY id DESC LIMIT ".$limit;
 
 $response = @mysqli_query($dbc, $query);
 
@@ -107,7 +107,7 @@ if($response){
 			$reply_response = @mysqli_query($dbc, $reply_query);
 			$num_reply = $reply_response->num_rows;
 
-			echo '<li><a href="http://subsides.hostei.com/get_board_content.php?id='.$row['id'].'">'.$row['subject'];
+			echo '<li><a href="./poll_board/get_poll_content.php?id='.$row['id'].'">'.$row['subject'];
 
 			if($num_reply != 0){
 				echo '['.$num_reply.']';
