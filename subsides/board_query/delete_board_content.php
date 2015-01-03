@@ -6,8 +6,6 @@
 
 		include('../header/header.php');
 
-		make_header();
-
 		?>
 </head>
 <body>

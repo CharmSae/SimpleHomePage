@@ -7,22 +7,25 @@
 		include('../header/header.php');
 		include('../board_query/board_query.php');
 
-		make_header();
-
 		?>
+
 	</head>
 <body>
 	<center>
+	<br/>
+	<p>Free Board</p>
+	<hr/>
 <?
 
 make_board_query('basic');
 
 ?>
-	<hr>
-	
+	<hr/>
+	<form action="./add_basic.html">
 		<div class="btn-group" role="group" aria-label="...">
-		  <button type="button" class="btn btn-default"><a href="http://subsides.hostei.com/basic_board/add_basic.html">글쓰러가기</a></button>
+		  <input type="submit" class="btn btn-default" value="글쓰러가기(Add post)"></input>
 		</div>
+	</form>
 	</center>
 </body>
 </html>

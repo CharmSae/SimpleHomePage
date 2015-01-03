@@ -7,8 +7,6 @@
         include('../header/header.php');
         include('../board_query/board_query.php');
 
-        make_header();
-
         ?>
 </head>
 <body>
@@ -30,17 +28,14 @@ foreach ($_FILES["pictures"]["error"] as $key => $error) {
 
         if (move_uploaded_file($tmp_name, $uploadfile)) {
 
-    		echo "파일이 유효하고, 성공적으로 업로드 되었습니다.\n";
+    		echo "파일이 유효하고, 성공적으로 업로드 되었습니다 (Image Upload Success).\n";
 
 		} else {
 
-    		print "파일 업로드 공격의 가능성이 있습니다!\n";
+    		print "파일 업로드 공격의 가능성이 있습니다! (Image Upload Failed)\n";
 		}
     }
 }
-
-	echo '자세한 디버깅 정보입니다:';
-	print_r($_FILES);
 
 	print "</pre>";
 
@@ -103,14 +98,14 @@ foreach ($_FILES["pictures"]["error"] as $key => $error) {
 
             if($affected_rows == 1){
 
-                echo '만들기 완료';
+                echo '만들기 완료 (Success)';
 
                 mysqli_stmt_close($stmt);
                 mysqli_close($dbc);
 
             } else {
 
-                echo '만들기 실패 <br/>';
+                echo '만들기 실패 (Failed)<br/>';
                 echo mysqli_error();
 
                 mysqli_stmt_close($stmt);
@@ -119,7 +114,7 @@ foreach ($_FILES["pictures"]["error"] as $key => $error) {
 
         } else {
 
-            echo '다음 항목을 입력하셔야 됩니다 <br/>';
+            echo '다음 항목을 입력하셔야 됩니다 (You missing something)<br/>';
 
             foreach($data_missing as $missing){
 
@@ -132,7 +127,7 @@ foreach ($_FILES["pictures"]["error"] as $key => $error) {
 ?>
 
 <hr>
-<a href=".//get_poll_board.php">게시판목록</a>
+<a href="./get_poll_board.php">게시판목록</a>
 </center>
 
 </body>

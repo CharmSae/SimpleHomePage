@@ -8,7 +8,6 @@
 
         include('../header/header.php');
 
-        make_header();
 
         ?>
 </head>
@@ -74,14 +73,14 @@
 
             if($affected_rows == 1){
 
-                echo '글쓰기 완료';
+                echo '글쓰기 완료 (Success)';
 
                 mysqli_stmt_close($stmt);
                 mysqli_close($dbc);
 
             } else {
 
-                echo '글쓰기 실패 <br/>';
+                echo '글쓰기 실패 (Failed)<br/>';
                 echo mysqli_error();
 
                 mysqli_stmt_close($stmt);
@@ -90,7 +89,7 @@
 
         } else {
 
-            echo '다음 항목을 입력하셔야 됩니다 <br/>';
+            echo '다음 항목을 입력하셔야 됩니다 (You missing something)<br/>';
 
             foreach($data_missing as $missing){
 

@@ -76,7 +76,7 @@ if($response){
 
 			  <!-- Table -->
 			  <table class="table">
-			   	<tr style ="background-color: #E5E5E5" align="center"><td width="70"><b>번호</b></td>
+			   	<tr class="first" align="center"><td width="70"><b>번호</b></td>
 	            <td width="300"><b>제목</b></td>
 	            <td width="100"><b>글쓴이</b></td>
 	            <td width="100"><b>날짜</b></td>

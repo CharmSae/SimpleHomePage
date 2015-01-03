@@ -5,10 +5,9 @@
 	<?php
 
 	include('../header/header.php');
+	include('../board_query/content_query.php');
 	include('../reply_query/reply_query.php');
-
-	make_header();
-
+	
 	?>
 </head>
 <body>
@@ -35,18 +34,23 @@
 
 	if($response){
 
-	echo '<table class ="subject" align="center" border="0" width="920" cellpadding="5" cellspacing="0">
+	echo '	<table width="920">
+					<td>
+				<div class="panel panel-default">
+				  <!-- Default panel contents -->
 
-		<tr style ="background-color: #E5E5E5"><td width="70"><b>번호</b></td>
-            <td width="400"><b>제목</b></td>
-            <td width="100"><b>글쓴이</b></td>
-            <td width="70"><b>날짜</b></td>
-            <td width="50"><b>조회</b></td></tr>
-		</tr>';
+				  <!-- Table -->
+				  <table class="table">
+				   	<tr class="first" align="center"><td width="70"><b>번호</b></td>
+		            <td width="300"><b>제목</b></td>
+		            <td width="100"><b>글쓴이</b></td>
+		            <td width="100"><b>날짜</b></td>
+		            <td width="50"><b>조회</b></td></tr>';
+
 
 		$row = mysqli_fetch_array($response);
 
-			echo '<tr>
+			echo '<tr align="center">
 					<td>'.$row['id']. '</td>
 					<td>'.$row['subject']. '</td>
 					<td>'.$row['writer']. '</td>
@@ -54,7 +58,7 @@
 					<td>'.$row['hits']. '</td>
 
 				</tr>
-			</table>
+			</table></div></td></table>
 			<hr>';
 
 			if($_REQUEST)

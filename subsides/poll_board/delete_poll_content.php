@@ -7,8 +7,6 @@
         include('../header/header.php');
         include('../board_query/board_query.php');
 
-        make_header();
-
         ?>
 </head>
 <body>

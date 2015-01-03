@@ -7,8 +7,6 @@
 
         include('../header/header.php');
 
-        make_header();
-
         ?>
 </head>
 <body>
@@ -112,7 +110,7 @@
         }
 ?>
 	<br>
-	<a href="http://subsides.hostei.com/basic_board/get_board_content.php?id=<?=$_POST['id']?>">수정글보기</a>
+	<a href="http://subsides.hostei.com/basic_board/get_basic_content.php?id=<?=$_POST['id']?>">수정글보기</a>
 	<a href="http://subsides.hostei.com/basic_board/get_basic_board.php">게시판목록</a></center>
 </body>
 </html>

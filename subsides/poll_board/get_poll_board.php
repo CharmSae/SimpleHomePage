@@ -7,21 +7,24 @@
         include('../header/header.php');
         include('../board_query/board_query.php');
 
-        make_header();
-
         ?>
 	</head>
 <body>
 	<center>
+	<br/>
+	<p>Poll Board</p>
+	<hr/>	
 <?
 
 make_board_query('poll');
 
 ?>
-	<hr>
-			<div class="btn-group" role="group" aria-label="...">
-			  <button type="button" class="btn btn-default"><a href="./add_poll.html">글쓰러가기</a></button>
-			</div>
+	<hr/>
+	<form action="./add_poll.html">
+		<div class="btn-group" role="group" aria-label="...">
+		  <input type="submit" class="btn btn-default" value="글쓰러가기(Add post)"></input>
+		</div>
+	</form>
 	</center>
 </body>
 </html>

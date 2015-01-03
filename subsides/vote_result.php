@@ -71,9 +71,9 @@
 
 			<table class="subject" align="center" border="0" width="300" cellpadding="5" cellspacing="0">
 			<tr>				
-				<td><img src="poll/'.$row['src1'].'" width="350"></td>
+				<td><img src="./image/poll/'.$row['src1'].'" width="350"></td>
 				<td><h1>VS.</h1></td>
-				<td><img src="poll/'.$row['src2'].'" width="350"></td>
+				<td><img src="./image/poll/'.$row['src2'].'" width="350"></td>
 			</tr>
 			<tr>				
 				<td><h1>'.$row['vote1'].'</h1></td>
@@ -94,9 +94,9 @@ mysqli_close($dbc);
 	?>
 
 	<hr>
-	<a href="http://subsides.hostei.com/get_poll_board.php">목록으로</a>
-	<a href="http://subsides.hostei.com/basic_board.html">글쓰러가기</a>
-	<a href="http://subsides.hostei.com/delete_board_confirm.php?id=<?=$_REQUEST['id']?>">삭제하기</a>
+	<a href="./poll_board/get_poll_board.php">목록으로</a>
+	<a href="./poll_board/app_poll.html">글쓰러가기</a>
+	<a href="./poll_board/delete_poll_confirm.php?id=<?=$_REQUEST['id']?>">삭제하기</a>
 	</center>
 </body>
 </html>

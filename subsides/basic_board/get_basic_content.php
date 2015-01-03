@@ -5,15 +5,15 @@
 	<?php
 
 	include('../header/header.php');
+	include('../board_query/content_query.php');
 	include('../reply_query/reply_query.php');
 
-	make_header();
-
 	?>
-
 </head>
 <body>
-
+	<center>
+	<h2>게시판 - 내용</h2>
+	<hr>
 <?
 
 make_content_query('basic', $_REQUEST['id']);

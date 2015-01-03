@@ -6,8 +6,6 @@
 
 		include('../header/header.php');
 
-		make_header();
-
 		?>
 </head>
 <body>
@@ -41,14 +39,14 @@
 
             if($affected_rows == 1){
 
-                echo '댓글삭제 완료';
+                echo '댓글삭제 완료 Delete success';
 
                 mysqli_stmt_close($stmt);
                 mysqli_close($dbc);
 
             } else {
 
-                echo '댓글삭제 실패 <br/>';
+                echo '댓글삭제 실패 Delete failed<br/>';
                 echo mysqli_error();
 
                 mysqli_stmt_close($stmt);
@@ -56,7 +54,7 @@
             }
         } else {
 
-        	echo "비밀번호가 틀렸습니다.";
+        	echo "비밀번호가 틀렸습니다. (Wrong password)";
         	mysqli_close($dbc);
 
         }
@@ -71,7 +69,7 @@
     
 
 	?>
-	<a href="../<?=$_REQUEST['content_name']?>_board/get_<?=$_REQUEST['content_name']?>_content.php?id=<?=$_REQUEST['parents_id']?>">원래글로</a>
+	<a href="../<?=$_REQUEST['content_name']?>_board/get_<?=$_REQUEST['content_name']?>_content.php?id=<?=$_REQUEST['parents_id']?>">원래글로 (Go to the post)</a>
 
 	<hr>
 	<a href="../<?=$_REQUEST['content_name']?>_board/get_<?=$_REQUEST['content_name']?>_board.php">목록으로</a>
