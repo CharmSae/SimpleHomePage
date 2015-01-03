@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://subsides.hostei.com//css/main.css">
 
-<script src="../jquery-2.1.3.min.js"></script>
+<script src="../javascript/jquery-2.1.3.min.js"></script>
 
 <script>
 	$(function(){

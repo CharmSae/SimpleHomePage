@@ -7,7 +7,7 @@
 	include('./header/header.php');
 
 	?>
-	<script src="jssor.slider.mini.js"></script>
+	<script src="./javascript/jssor.slider.mini.js"></script>
 
 	<script>
 		$(function(){

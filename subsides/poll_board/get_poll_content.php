@@ -67,9 +67,9 @@
 
 			<table align="center" border="0" width="300" cellpadding="5" cellspacing="0">
 			<tr>				
-				<td><a href="../aftervote.php?id='.$_REQUEST['id'].'&vote=1"><img src="../image/poll/'.$row['src1'].'"  width="350"></a></td>
+				<td><a href="./aftervote.php?id='.$_REQUEST['id'].'&vote=1"><img src="../image/poll/'.$row['src1'].'"  width="350"></a></td>
 				<td><h1>VS.</h1></td>
-				<td><a href="../aftervote.php?id='.$_REQUEST['id'].'&vote=2"><img src="../image/poll/'.$row['src2'].'"  width="350"></a></td>
+				<td><a href="./aftervote.php?id='.$_REQUEST['id'].'&vote=2"><img src="../image/poll/'.$row['src2'].'"  width="350"></a></td>
 			</tr>
 
 			</table>';
