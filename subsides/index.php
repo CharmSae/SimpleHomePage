@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>설문조사</title>
+	<title>Take a Look</title>
 	<?php
 
 	include('./header/header.php');
