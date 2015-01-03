@@ -78,7 +78,7 @@ function make_reply_query($content_name, $parents_id){
 			<h6>'.$row['date'].'</h6>
 			</td>
 			<td> 
-			<a href="../reply_query/delete_reply_confirm.php?parents_id='.$parents_id.'&id='.$row['id'].'&content_name='.$content_name.'"><img src="../image/btn_close.gif"></a>
+			<a href="../board_query/delete_reply_confirm.php?parents_id='.$parents_id.'&id='.$row['id'].'&content_name='.$content_name.'"><img src="../image/btn_close.gif"></a>
 			</td>
 			</tr>';
 		}

@@ -6,7 +6,7 @@
 
 	include('../header/header.php');
 	include('../board_query/content_query.php');
-	include('../reply_query/reply_query.php');
+	include('../board_query/reply_query.php');
 
 	?>
 </head>
