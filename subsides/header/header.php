@@ -47,16 +47,16 @@
 						</ul>
 					</li>
 
-					<li><a href="http://subsides.hostei.com/examgall.php">수능갤러리</a></li>
-					<li><a href="http://subsides.hostei.com/ext.php">나나잇걸</a></li>
+					<li><a href="http://subsides.hostei.com/ext/examgall.php">Dcinside</a></li>
+					<li><a href="http://subsides.hostei.com/ext/nanaitgirl.php">Nana it girl</a></li>
 					<li class="dropdown">
-						<a href="" data-id="dropdown2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Testing<span class="caret"></span></a>
+						<a href="" data-id="dropdown2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Togoon<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="http://subsides.hostei.com/togoon_movie.php">토군 - 영화</a></li>
+							<li><a href="http://subsides.hostei.com/togoon/togoon_movie.php">Togoon - Movie</a></li>
 							<li class="divider"></li>
-							<li><a href="http://subsides.hostei.com/togoon_variety.php">토군 - 예능</a></li>
+							<li><a href="http://subsides.hostei.com/togoon/togoon_variety.php">Togoon - Variety</a></li>
 							<li class="divider"></li>
-							<li><a href="http://subsides.hostei.com/togoon_drama.php">토군 - 드라마</a></li>
+							<li><a href="http://subsides.hostei.com/togoon/togoon_drama.php">Togoon - Drama</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -70,5 +70,5 @@
 
 </script>
 
-<br><br><br>
+<br><br>
 

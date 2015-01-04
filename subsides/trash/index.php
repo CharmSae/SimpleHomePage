@@ -12,7 +12,6 @@
 	<script>
 		$(function(){
 
-			$('#introduce').fadeIn(1500);
 			$('#panel1').fadeIn(1500);
 			$('#panel2').fadeIn(1500);
 
@@ -28,12 +27,12 @@
 	</script>
 
 </head>
-<body style="background-color: white;">
+<body>
 	<center>
-		<div id="introduce">
+		<div class="white">
 			<br/>
-			<div>
-				<div style="width:160px;"><h2>About me</h2></div>
+			<div class="introduce">
+				<p><h2>About me</h2></p>
 				<p>Hi! My name is Durumi and I am from Korea. Now I am a senior student in a college. Recently, I studied MEAN stack which is including node.js and angular.js but I don't feel comfortable with that. So I am currently working on test project using that. But if you want contact me, feel free to leave a message in <a href="/basic_board/get_basic_board.php">freeboard</a>. Or send a message to my email which is <b>ac12bd@gmail.com</b></p>
 				<p>Then I'll check as soon as possible.</p>
 			</div>
@@ -42,7 +41,6 @@
 			</div>
 		</div>
 
-		<article>
 		<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
 			<!-- Slides Container -->
 			<div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
@@ -54,7 +52,7 @@
 			</div>
 		</div>
 
-		<br/>
+		<br/>	
 
 		<table border="0" width="800" cellpadding="0" cellspacing="0">
 			<tr>
@@ -72,7 +70,7 @@
 				<td>
 					<div id="panel1" class="col-sm-9 col-xs-12" style="display:none; float:right;">
 						<div class="panel panel-primary">
-							<div class="panel-heading">FreeBoard (Recent 10)</div>
+							<div class="panel-heading">FreeBoard (Recent 10 posts)</div>
 							<div class="panel-body">
 								<ul>
 
@@ -123,7 +121,7 @@
 				<td>
 					<div id="panel2" class="col-sm-9 col-xs-12" style="display:none;">
 						<div class="panel panel-primary">
-							<div class="panel-heading">PollBoard (Recent 10)</div>
+							<div class="panel-heading">PollBoard (Recent 10 posts)</div>
 							<div class="panel-body">
 								<ul>
 									<?
@@ -169,15 +167,13 @@
 				</td>
 			</tr>
 		</table>
-		<hr/>
-	</article>
-		
+		<hr>
 	</center>
+
 </body>
 <footer>
-
 	<center>
-		<h5>Tested in Chrome, Firefox and Exploer.</h5>
+		<h5>Tested in Chrome browser only.</h5>
 		<h5>Copyright ⓒ2014 By Durumi, All Rights Resrved.</h5>
 		<h5>Crafted with Sublime Text 3 and built with HTML 5, CSS3, jQuery, PHP and MySQL.</h5>
 	</center>

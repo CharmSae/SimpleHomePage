@@ -3,9 +3,31 @@
 .subject tr td a {text-decoration: none; font-family: dotum;}
 .reply tr td {border-bottom: 1px solid #A3A3A3;}
 
-.first{
+body {
+	background-color: #EEEEEE;
+}
+
+#introduce {
+	display: none;
+	width: 700px; 
+	top: 10px; 
+	left: 0px;
+	padding-bottom: 10px;
+}
+
+article {
+	padding-top: 20px;
+	background-color: #EEEEEE;
+}
+
+.first {
 	color: white;
 	background-color: #F34677;
+}
+
+.first_blue{
+	color: white;
+	background-color: #45A8F1;
 }
 
 .nav-stacked{
@@ -24,8 +46,6 @@
 	background-color: #F34677;
 }
 
-body {background-color:#EEEEEE;}
-
 p {
 	font-family: "Arials", Georgia, Serif;
 	font-size: 150%;
@@ -33,11 +53,15 @@ p {
 }
 
 h2:hover {
-	color: white;
+	color: #45A8F1;
 }
 
 hr {
 	border-color: #797979;
+}
+
+footer {
+	background-color: white;
 }
 
 .navbar-default {

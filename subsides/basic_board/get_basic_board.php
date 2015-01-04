@@ -13,8 +13,8 @@
 <body>
 	<center>
 	<br/>
-	<p>Free Board</p>
-	<hr/>
+	<div style="width:160px;"><h2>FreeBoard</h2></div>
+
 <?
 
 make_board_query('basic');

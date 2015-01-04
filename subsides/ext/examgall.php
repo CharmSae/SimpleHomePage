@@ -4,7 +4,7 @@
     <title>디씨 수능갤러리</title>
     <?php
 
-    include('./header/header.php');
+    include('../header/header.php');
 
     ?>
 
@@ -13,8 +13,7 @@
 
 <br/>
 <center>
-<p>This page is from <a href="http://job.dcinside.com/board/lists/?id=exam_new&page=1">here</a>
-<br/>
+<p>This page is from <a href="http://job.dcinside.com/board/lists/?id=exam_new&page=1">here</a></p>
 <hr/>
 <?php
 	
@@ -29,13 +28,18 @@
 
     $subjects = $finder->query("//*[contains(@class, 'tb')]");
 
-    echo '<table style = "border-spacing: 0px;" class="subject" valign = "top" cellspacing="6" cellpadding="6">
+    echo '<table width="920">
+                <td>
+            <div class="panel panel-default">
+              <!-- Default panel contents -->
 
-        <tr style ="background-color: #E5E5E5"><td><b>번호</b></td>
-            <td><b>제목</b></td>
-            <td><b>글쓴이</b></td>
-            <td><b>날짜</b></td>
-            <td><b>조회</b></td></tr>';
+              <!-- Table -->
+              <table class="table">
+                <tr class="first_blue" align="center"><td width="70"><b>번호</b></td>
+                <td width="300"><b>제목</b></td>
+                <td width="100"><b>글쓴이</b></td>
+                <td width="100"><b>날짜</b></td>
+                <td width="50"><b>조회</b></td></tr>';
 
         for ($i=0; $i < $subjects->length; $i++) { 
 
@@ -50,27 +54,27 @@
             $finding = strpos($id, $want);
 
             if($finding == true){
-            echo '<tr><td align = "center"><b>'.
+            echo '<tr align="center"><td><b>'.
             $id.'</td><td align="left">'.
-            '<a href="http://gall.dcinside.com/'.$href.'"><b>'.$subject.'</a>'.
-            '</td><td align="center"><b>'.$writer.'</td>'.
-            '<td align="center">'.$date.'</td>'.
-            '<td align="center">'.$hits.'</td></tr>';
+            '<a href="http://gall.dcinside.com/'.$href.'"><b>'.$subject.'</a></td>'.
+            '<td><b>'.$writer.'</td>'.
+            '<td>'.$date.'</td>'.
+            '<td>'.$hits.'</td></tr>';
 
             } else {
-            echo '<tr><td align = "center">'.
+            echo '<tr align="center"><td>'.
             $id.'</td><td align="left">'.
-            '<a href="http://gall.dcinside.com/'.$href.'">'.$subject.'</a>'.
-            '</td><td align="center">'.$writer.'</td>'.
-            '<td align="center">'.$date.'</td>'.
-            '<td align="center">'.$hits.'</td></tr>';
+            '<a href="http://gall.dcinside.com/'.$href.'">'.$subject.'</a></td>'.
+            '<td>'.$writer.'</td>'.
+            '<td>'.$date.'</td>'.
+            '<td>'.$hits.'</td></tr>';
 
             }
 
             
 
     }
-    echo '</table>';
+    echo '</table></div></td></table>';
 
     //var_dump($subjects->item(0)->childNodes->item(2)->childNodes->item(0)->getAttribute("href"));
    //var_dump($subjects->item(6)->childNodes->item(6)->textContent);

@@ -12,8 +12,8 @@
 <body>
 	<center>
 	<br/>
-	<p>Poll Board</p>
-	<hr/>	
+	<div style="width:160px;"><h2>PollBoard</h2></div>
+	
 <?
 
 make_board_query('poll');
