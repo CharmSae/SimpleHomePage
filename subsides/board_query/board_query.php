@@ -1,87 +1,129 @@
 <?php
 function make_board_query($board_name){
 
-$per_page = 10;
+	$posts_per_page = 10;
+	$pages_per_page = 10;
 
-require_once('../mysqli_connector.php');
+	$page_start = 1; // 1 start
+	$page_end = $pages_per_page;
 
-$query = "SELECT * FROM ".$board_name."_board ORDER BY id DESC";
+	$start = 0; // 0 start
+	$end = $posts_per_page;
+	$current_page_group = 1;
 
-$response = @mysqli_query($dbc, $query);
+	$show_page = 1; // 1 start
 
-if($response){
+	require_once('../mysqli_connector.php');
 
-	if($response->num_rows != 0){
+	$query = "SELECT * FROM ".$board_name."_board ORDER BY id DESC";
 
-		$total_results = $response->num_rows;
-		$total_pages = ceil($total_results / $per_page);
+	$response = @mysqli_query($dbc, $query);
 
-		if(isset($_GET['page']) && is_numeric($_GET['page'])){
+	if($response){
 
-			$show_page = $_GET['page'];
+		if($response->num_rows != 0){
 
-			if($show_page > 0 && $show_page <= total_pages){
+			$total_results = $response->num_rows;
+			$total_pages = ceil($total_results / $posts_per_page);
 
-				$start = ($show_page - 1) * $per_page;
-				$end = $start + $per_page;
-			} else {
+			if(isset($_GET['page']) && is_numeric($_GET['page'])){
 
-				$start = 0;
-			$end = $per_page;
+				$show_page = $_GET['page'];
+				$current_page_group = ceil($show_page / $pages_per_page);
+
+				$page_end = $current_page_group * $pages_per_page;
+				$page_start = ($page_end - $pages_per_page + 1);
+
+				if($page_start == 0){
+					$page_start = 1;
+				}
+				
+				if($show_page > 0 && $show_page <= total_pages){
+
+					$start = ($show_page - 1) * $posts_per_page;
+					$end = $start + $posts_per_page;
+				}
+
 			}
-
-		} else {
-
-			$start = 0;
-			$end = $per_page;
-		}
 
 		//display pagination
 
 		//echo '<p><a href="get_all_board.php">전체보기</a> | <b>페이지</b><br>';
-		?>
-					<nav>
-			  <ul class="pagination">
-			    <li class="disabled">
-			      <a href="#" aria-label="Previous">
-			        <span aria-hidden="true">&laquo;</span>
-			      </a>
-			    </li> 
-		<?
-		for($i = 1; $i <= $total_pages; $i++){
+			?>
+			<nav>
+				<ul class="pagination">
+					
+					<?
 
-			if(isset($_GET['page']) && $_GET['page'] == $i){
+					if($current_page_group > 1){
 
-				echo '<li class="active"><a href="#">'.$i.'</a></li>';
-			} else {
-				echo '<li><a href="get_'.$board_name.'_board.php?page='.$i.'">'.$i.'</a></li>';
+						echo '<li>
+						<a href="get_'.$board_name.'_board.php?page='.($page_start - 1).'" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>';
+
+				} else {
+					echo '<li class="disabled">
+					<a href="" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>';
+
 			}
-		}
-
-?>
 
 
-			<li>
-			      <a href="#" aria-label="Next">
-			        <span aria-hidden="true">&raquo;</span>
-			      </a>
-			    </li>
-			  </ul>
-			</nav>
-			
-			<table width="920">
-				<td>
-			<div class="panel panel-default">
-			  <!-- Default panel contents -->
+			for($i = $page_start; $i <= $page_end; $i++){
 
-			  <!-- Table -->
-			  <table class="table">
-			   	<tr class="first" align="center"><td width="70"><b>번호</b></td>
-	            <td width="300"><b>제목</b></td>
-	            <td width="100"><b>글쓴이</b></td>
-	            <td width="100"><b>날짜</b></td>
-	            <td width="50"><b>조회</b></td></tr>
-<?
+				if($i > $total_pages){
+					break;
+				}
+
+				if($i == $show_page){
+
+					echo '<li class="active"><a href="#">'.$i.'</a></li>';
+
+				} else {
+
+					echo '<li><a href="get_'.$board_name.'_board.php?page='.$i.'">'.$i.'</a></li>';
+
+				} 
+
+			}
+
+			if($current_page_group < ceil($total_pages/$pages_per_page)){
+
+				echo '<li>
+				<a href="get_'.$board_name.'_board.php?page='.($page_end + 1).'" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>';
+		} else {
+			echo '<li class = "disabled">
+			<a href="" aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			</a>
+		</li>';
+	}
+
+	?>
+
+</ul>
+</nav>
+
+<table width="920">
+	<td>
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+
+			<!-- Table -->
+			<table class="table">
+				<tr class="first" align="center"><td width="70"><b>번호</b></td>
+					<td width="300"><b>제목</b></td>
+					<td width="100"><b>글쓴이</b></td>
+					<td width="100"><b>날짜</b></td>
+					<td width="50"><b>조회</b></td></tr>
+					<?
 
 		/*echo '<table class ="subject" border="0" width="920" cellpadding="5" cellspacing="0">
         <tr style ="background-color: #E5E5E5"><td width="70"><b>번호</b></td>
@@ -90,88 +132,52 @@ if($response){
             <td width="70"><b>날짜</b></td>
             <td width="50"><b>조회</b></td></tr>';*/
 
-		for($i = $start; $i < $end; $i++){
+            for($i = $start; $i < $end; $i++){
 
-			if($i == $total_results){
-				break;
-			}
+            	if($i == $total_results){
+            		break;
+            	}
 
-			$response->data_seek($i);
-			$row = $response->fetch_row();
+            	$response->data_seek($i);
+            	$row = $response->fetch_row();
 
 			//댓글 세는 기능
 
-			$reply_query = "SELECT * FROM ".$board_name."_reply WHERE parents_id = ".$row[0];
-			$reply_response = @mysqli_query($dbc, $reply_query);
-			$num_reply = $reply_response->num_rows;
-		
+            	$reply_query = "SELECT * FROM ".$board_name."_reply WHERE parents_id = ".$row[0];
+            	$reply_response = @mysqli_query($dbc, $reply_query);
+            	$num_reply = $reply_response->num_rows;
 
-			echo '<tr align="center"><td>'.$row[0]. '</td>
-					<td align="left">'.'<a href="./get_'.$board_name.'_content.php?id='.$row[0].'">'.
-					$row[1];
 
-			if($num_reply != 0){
-				echo '['.$num_reply.']';
-			}
+            	echo '<tr align="center"><td>'.$row[0]. '</td>
+            	<td align="left">'.'<a href="./get_'.$board_name.'_content.php?id='.$row[0].'">'.
+            		$row[1];
 
-			echo	'</a></td>
-					<td>'.$row[3].'</td>
-					<td>'.$row[5].'</td>
-					<td>'.$row[6].'</td>';
-			echo '</tr>';
-		}
+            		if($num_reply != 0){
+            			echo '['.$num_reply.']';
+            		}
 
-		echo '</table></div></td></table>';
+            		echo	'</a></td>
+            		<td>'.$row[3].'</td>
+            		<td>'.$row[5].'</td>
+            		<td>'.$row[6].'</td>';
+            		echo '</tr>';
+            	}
 
-	} else {
-		echo "No results to display";
-	}
+            	echo '</table></div></td></table>';
 
-} else {
+            } else {
+            	echo "No results to display";
+            }
 
-	echo "Couldn't issue database query ";
+        } else {
 
-	echo mysqli_error($dbc);
-}
+        	echo "Couldn't issue database query ";
 
-mysqli_close($dbc);
+        	echo mysqli_error($dbc);
+        }
 
-/*$query = "SELECT id, subject, content, writer, date, hits FROM basic_board";
+        mysqli_close($dbc);
 
-$response = @mysqli_query($dbc, $query);
-
-if($response){
-
-	echo '<table class ="subject" border="0" width="920" cellpadding="5" cellspacing="0">
-        <tr style ="background-color: #EEEEEE"><td width="70"><b>번호</b></td>
-            <td width="400"><b>제목</b></td>
-            <td width="100"><b>글쓴이</b></td>
-            <td width="70"><b>날짜</b></td>
-            <td width="50"><b>조회</b></td></tr>';
-
-		while($row = mysqli_fetch_array($response)){
-
-			echo '<tr><td>'.$row['id']. '</td>
-					<td align="left">'.'<a href="http://subsides.hostei.com/get_board_content.php?id='.$row['id'].'">'.
-					$row['subject'].'</a></td>
-					<td>'.$row['writer'].'</td>
-					<td>'.$row['date'].'</td>
-					<td>'.$row['hits'].'</td>';
-			echo '</tr>';
-		}
-
-		echo '</table>';
-
-} else {
-
-	echo "Couldn't issue database query ";
-
-	echo mysqli_error($dbc);
-}
-
-mysqli_close($dbc);
-
-*/
 }
 
 ?>
