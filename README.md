@@ -1,4 +1,6 @@
 SimpleHomePage
 ==============
 
-This is a simple home page for test purposes
+This is my simple home page.
+
+Take a look http://subsides.hostei.com
