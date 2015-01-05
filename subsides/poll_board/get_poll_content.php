@@ -90,7 +90,7 @@ mysqli_close($dbc);
 	<hr>
 	<a href="./get_poll_board.php">목록으로</a>
 	<a href="./add_poll.html">만들러가기</a>
-	<a href="../board_query/delete_board_confirm.php?id=<?=$_REQUEST['id']?>">삭제하기</a>
+	<a href="../board_query/delete_board_confirm.php?board_name=poll&id=<?=$_REQUEST['id']?>">삭제하기</a>
 	</center>
 	<br>
 </body>

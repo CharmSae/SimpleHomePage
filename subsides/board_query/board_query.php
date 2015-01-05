@@ -13,7 +13,7 @@ function make_board_query($board_name){
 
 	$show_page = 1; // 1 start
 
-	require_once('../mysqli_connector.php');
+	require_once('./db_connector/mysqli_connector.php');
 
 	$query = "SELECT * FROM ".$board_name."_board ORDER BY id DESC";
 
