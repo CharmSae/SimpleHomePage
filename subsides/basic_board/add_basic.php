@@ -28,26 +28,26 @@
 
         if(empty($_POST['subject'])){
 
-            $data_missing[] = '제목';
+            $data_missing[] = '제목 subject';
 
         } else {
             $subject = trim($_POST['subject']);
         }
 
         if(empty($_POST['content'])){
-            $data_missing[] = '내용';
+            $data_missing[] = '내용 content';
         } else {
             $content = trim($_POST['content']);
         }
 
         if(empty($_POST['writer'])){
-            $data_missing[] = '글쓴이';
+            $data_missing[] = '글쓴이 writer';
         } else {
             $writer = trim($_POST['writer']);
         }
 
         if(empty($_POST['password'])){
-            $data_missing[] = '비밀번호';
+            $data_missing[] = '비밀번호 password';
         } else {
             $password = trim($_POST['password']);
         }

@@ -31,15 +31,13 @@ article {
 }
 
 .recent_box {
-	width: 20%;
-	display: inline-block;
-	padding: 10px;
+	width: 70%;
+	display: none;
 }
 
 .title_box {
-	color: #ecf0f1;
 	height: 40px;
-	background: #40579D;
+	background: #B8CAFF;
 	border-radius: 8px;
 	font-size: 18px;
 	font-weight: bold;
@@ -50,56 +48,31 @@ article {
 }
 
 .content_box {
-	text-align: left;
+	margin: 0 auto;
 	background: #ffffff;
-	padding: 10px;
-
+	border: 20px;
+	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-
-.content_box ul {
-	padding: 0;
-	border: 0;
-	list-style-type: none;
-}
-
-.content_box ul li {
-	padding: 2px;
-}
-
-.content_box ul li:hover {
-	background-color: #E0F0FF;
-}
-
-.list_text {
-	color: black;
-	font-size: 15px;
-}
-
 .menu {
-	width: 250px;
-	padding: 10px;
-	display: inline-block;
+	display: inline;
 }
 
-.menu > ul > a {
-	text-decoration: none;
-}
-
-.menu > ul > a > li {
-	color: #40579D;
-	padding: 14px;
-	list-style: none;
-
-	font-family: "Serif", Georgia, Arials;
-	font-size: 16px;
+.menu > ul{
+	font-family: "Arials", Georgia, Serif;
+	font-size: 18px;
 	font-weight: bold;
+	
+}
 
+.menu > ul > li {
+	padding: 10px;
+	list-style: none;
 }
 
 
-.menu > ul > a > li:hover{
+.menu > ul > li:hover{
 	background-color: white;
 }
 
@@ -109,16 +82,16 @@ article {
 }
 
 p {
-	font-family: "Serif", Georgia, Arials;
-	font-size: 18px;
+	font-family: "Arials", Georgia, Serif;
+	font-size: 150%;
 }
 
 h1 {
-	color: #40579D;
+	color: #7094FF;
 	font-family: "Serif";
 	font-weight: bold;
 	font-style: italic;
-	text-shadow: 2px 2px 3px #999B9C;
+	text-shadow: 2px 2px 3px #555859;
 }
 
 hr {
@@ -138,8 +111,6 @@ footer {
 .navbar-default .navbar-brand {
 	color: #ecf0f1;
 	font-weight: bold;
-	font-size: 22px;
-
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
 	color: black;
@@ -150,7 +121,6 @@ footer {
 .navbar-default .navbar-nav > li > a {
 	color: #ecf0f1;
 	font-weight: bold;
-	font-size: 16px;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 	color: black;

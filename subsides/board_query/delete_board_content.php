@@ -23,14 +23,14 @@
 
 			if($affected_rows == 1){
 
-				echo 'success';
+				echo '삭제 완료 Delete success';
 
 				mysqli_stmt_close($stmt);
 				mysqli_close($dbc);
 
 			} else {
 
-				echo 'failed';
+				echo '삭제 실패 Delete failed';
 				echo mysqli_error();
 
 				mysqli_stmt_close($stmt);
@@ -38,7 +38,7 @@
 			}
 		} else {
 
-			echo "wrong password";
+			echo "비밀번호가 틀렸습니다. (Wrong password)";
 			mysqli_close($dbc);
 
 		}

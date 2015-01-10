@@ -24,9 +24,9 @@
 	if($response){
 
 	$row = mysqli_fetch_array($response);
-	$subject = nl2br($row['subject']);
-	$content = nl2br($row['content']);
-	$writer = nl2br($row['writer']);
+	$subject = $row['subject'];
+	$content = $row['content'];
+	$writer = $row['writer'];
 
 	}
 

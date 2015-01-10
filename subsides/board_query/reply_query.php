@@ -96,8 +96,8 @@ echo '		<tr>
 			<form action="../'.$content_name.'_board/get_'.$content_name.'_content.php" method="post">
 			<td>
 				<input type="hidden" class="form-control"  name="id" value="'.$parents_id.'"/>
-				<input type="text" class="form-control"  name="nickname" size="10" value="" placeholder="닉네임"/>
-				<input type="text" class="form-control"  name="password" size="10" value="" placeholder="비밀번호"/>	
+				<input type="text" class="form-control"  name="nickname" size="10" value="" placeholder="Nickname"/>
+				<input type="text" class="form-control"  name="password" size="10" value="" placeholder="Password"/>	
 			</td>
 			<td>
 			<textarea class="form-control" name="content" cols="90" rows="3" value="">

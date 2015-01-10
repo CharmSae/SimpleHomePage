@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>게시판 - 내용</title>
-		<?php
-
-		include('../header/header.php');
-
-		?>
-</head>
-<body>
-	<br><br><br>
-	<center>
-	<h2>게시판 - 내용</h2>
-	<hr>
-
 	<?php
 
 	require_once('../mysqli_connector.php');
@@ -46,7 +30,7 @@
 
             } else {
 
-                echo '댓글삭제 실패 Delete failed<br/>';
+                echo '댓글삭제 실패 Delete failed';
                 echo mysqli_error();
 
                 mysqli_stmt_close($stmt);
@@ -69,11 +53,3 @@
     
 
 	?>
-	<a href="../<?=$_REQUEST['content_name']?>_board/get_<?=$_REQUEST['content_name']?>_content.php?id=<?=$_REQUEST['parents_id']?>">원래글로 (Go to the post)</a>
-
-	<hr>
-	<a href="../<?=$_REQUEST['content_name']?>_board/get_<?=$_REQUEST['content_name']?>_board.php">목록으로</a>
-	<a href="../<?=$_REQUEST['content_name']?>_board/add_<?=$_REQUEST['content_name']?>.html">글쓰러가기</a>
-	</center>
-</body>
-</html>
